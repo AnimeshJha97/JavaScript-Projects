@@ -1,0 +1,49 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding : 0;
+  font-family: 'Arial', sans-serif;  color: black;
+}
+
+img {
+  width : 100%;
+}
+
+body {
+  background-size: cover;
+  background-image: url("../snow.jpg");
+  background-position: center center;
+  align-items: center;
+  display : flex;
+  flex-direction : column;
+  justify-content: center;
+  min-height : 100vh;
+  color: black;
+}
+
+
+.cd-container{
+  display : flex;
+  align-items: center;
+}
+
+.cd {
+  text-align : center;
+}
+
+h1 {
+  font-size: 4rem;
+  margin-top : -15rem;
+  font-weight: normal;
+}
+
+.big-text{
+  font-size: 6rem;
+  line-height: 1;
+  font-weight : bold;
+  margin : 0 1.5rem;
+}
+
+span{
+  font-size: 1.3rem;
+}
