@@ -1,0 +1,1 @@
+This is a basic java script project using HTML CSS and JS and without using any Additional Library(Vanilla JS).
