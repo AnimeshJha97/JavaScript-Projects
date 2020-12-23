@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Grade Calculator</title>
+<!-- CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+<!-- Java Script -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="container outer_box">
+      <div class="row">
+        <div class="col col-lg-4 lft">
+          <h3>|Student </h3>
+          <h3>|Grade </h3>
+          <h3>|Calculator.</h3>
+        </div>
+        <div class="col col-lg-8 rt">
+          <div class="form-group" action="index.html" method="post">
+            <input type="number" class="form-control" id="eng" name="number" placeholder="English">
+          </div>
+          <div class="form-group" action="index.html" method="post">
+            <input type="number" class="form-control" id="hindi" name="number" placeholder="Hindi">
+          </div>
+          <div class="form-group" action="index.html" method="post">
+            <input type="number" class="form-control" id="phy" name="number" placeholder="Physics">
+          </div>
+          <div class="form-group" action="index.html" method="post">
+            <input type="number" class="form-control" id="chem" name="number" placeholder="Chemistry">
+          </div>
+          <div class="form-group" action="index.html" method="post">
+            <input type="number" class="form-control" id="maths" name="number" placeholder="Maths">
+          </div>
+          <button class="btn btn-outline-primary" type="button" name="button" onclick="calc()">Calculate</button>
+
+          <div class="form-group">
+            <p id="showData"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const calc = () => {
+        let eng = document.getElementById('eng').value;
+        let hindi = document.getElementById('hindi').value;
+        let phy = document.getElementById('phy').value;
+        let chem = document.getElementById('chem').value;
+        let maths = document.getElementById('maths').value;
+
+        let tot = parseFloat(eng) + parseFloat(hindi) + parseFloat(phy) + parseFloat(chem) + parseFloat(maths);
+        let perc, grade;
+        perc = tot / 5;
+        if(perc>=80)
+          grade = 'A';
+        else if(perc >= 65)
+          grade = 'B';
+        else if(perc >= 50)
+          grade = 'C';
+        else if(perc >= 40)
+          grade = 'D';
+        else
+          grade = 'E';
+
+        document.getElementById('showData').innerHTML = `Out of 500, your total score is ${tot}, percentage is ${perc} and grade is '${grade}'.`;
+
+      }
+
+      </script>
+  </body>
+</html>
